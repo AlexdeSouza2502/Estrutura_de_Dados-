@@ -1,4 +1,3 @@
-
 package javaqueue;
 import java.util.*;
 import javax.swing.JOptionPane;
@@ -9,7 +8,7 @@ public class FormFila extends javax.swing.JFrame {
     Queue<Pessoa> filaNormal = new ArrayDeque<Pessoa>();
     Queue<Pessoa> filaPrioridade = new ArrayDeque<Pessoa>();
  
-    int cont = 0;
+    int contador = 0;
     
     public FormFila() {
         initComponents();
@@ -17,7 +16,7 @@ public class FormFila extends javax.swing.JFrame {
 
    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -196,7 +195,7 @@ public class FormFila extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     void mostra(){
         listFilaNormal.setText("");
@@ -218,33 +217,9 @@ public class FormFila extends javax.swing.JFrame {
     }
     }
     
-    void decid(){
-        
-            if(cont<=2 && !filaPrioridade.isEmpty()){
-            Pessoa p = new Pessoa();
-            p = filaPrioridade.remove();
-            lblProx.setText("Proximo: " + p.getNome());
-            mostra();
-            cont++;
-           
-            
-        }
-            else{
-                 if(!filaNormal.isEmpty()){
-            Pessoa p = new Pessoa();
-            p = filaNormal.remove();//dequeue
-            lblProx.setText("Proximo : "+p.getNome());
-            mostra();
-            cont=0;//fim if
-                 }
-            else
-            JOptionPane.showMessageDialog(null, "Fila Vazia");
- 
-        }    
-            
-    }
+     
     
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {                                       
         Pessoa p = new Pessoa();
         p.setNome(txtNome.getText());
         p.setRg(txtRG.getText());
@@ -253,11 +228,33 @@ public class FormFila extends javax.swing.JFrame {
             mostra();
             System.out.println(filaNormal);
             System.out.println(filaPrioridade);
-    }//GEN-LAST:event_btnAddActionPerformed
+    }                                      
 
-    private void btnAtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtenderActionPerformed
-        decid();
-    }//GEN-LAST:event_btnAtenderActionPerformed
+    private void btnAtenderActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        
+         if(contador<=2 && !filaPrioridade.isEmpty()){
+  
+            Pessoa p = new Pessoa();
+            p = filaPrioridade.remove();
+            lblProx.setText("Proximo: "+ p.getNome());
+            mostra();
+            contador++;
+           
+           
+        }
+            else{
+                 if(!filaNormal.isEmpty()){
+            Pessoa p = new Pessoa();
+            p = filaNormal.remove();//dequeue
+            lblProx.setText("Proximo: "+ p.getNome());
+            mostra();
+            contador=0;//fim if
+                 }
+            else
+            JOptionPane.showMessageDialog(null, "Fila Vazia");
+ 
+        }    
+    }                                          
 
     public static void main(String args[]) {
 
@@ -268,7 +265,7 @@ public class FormFila extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnAtender;
     private javax.swing.JLabel jLabel1;
@@ -283,5 +280,6 @@ public class FormFila extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtRG;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
+
