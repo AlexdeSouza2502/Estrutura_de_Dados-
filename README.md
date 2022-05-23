@@ -13,3 +13,8 @@ Projeto feito em C sobre encadeamento(o mesmo mostra site e data). projeto feito
 ![image](https://user-images.githubusercontent.com/62069087/165408073-8b3fa263-c98d-449d-9cc3-e0cb9a2b7d2d.png)
 
 
+
+Projeto feito na Linguagem C, feita com onde um suposto rato percorre um caminho ate encontrar um queijo 
+![image](https://user-images.githubusercontent.com/62069087/169917510-27b09cea-2fe2-4f82-82f9-5db051cb4967.png)
+
+
