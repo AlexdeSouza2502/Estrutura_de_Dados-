@@ -126,6 +126,7 @@ tdado removeLista(tlista *l, tdado v){
 	}
 }// fim remove
 //----------------------------
+//Encontra dado
 int contador (tlista l, tdado v){
 	int cont = -1;
 	while (l.head != NULL){
@@ -202,7 +203,8 @@ int main(){
 			case 7: if(!isEmpty(&l)){
 				printf("Digite o valor que deseja encontra:");
 				scanf("%d",&v);
-				printf("%d",contador(l,v));
+				printf("Valor encontrado apos posicao %d",contador(l,v));
+				
 				break;
 			}         
 			case 0: printf("Saindo ...\n");
@@ -213,5 +215,4 @@ int main(){
 		system("cls");
 	}while(op!=0);
 }//fim main
-
 
