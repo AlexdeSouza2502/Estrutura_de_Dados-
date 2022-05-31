@@ -125,6 +125,18 @@ tdado removeLista(tlista *l, tdado v){
 		}// fim while      
 	}
 }// fim remove
+//----------------------------
+int contador (tlista l, tdado v){
+	int cont = -1;
+	while (l.head != NULL){
+		cont++;
+		if(l.head->dado == v)
+			return cont;
+		l.head = l.head ->prox;
+	}
+	
+return -1;
+}
 //-----------------------------
 void printList(tlista l){
 	while(l.head!=NULL){
@@ -152,6 +164,7 @@ printf("3-Insert Tail\n");
 printf("4-Remove Head\n");
 printf("5-Remove Tail\n");
 printf("6- Remove\n");
+printf("7-encontra valor\n");
 printf("0-Sair\n");
 scanf("%d",&op);
 return op;
@@ -185,7 +198,13 @@ int main(){
 			        // testar se existe
 				    printf("Valor %d removido\n", removeLista(&l,v));
 			        }
-			break;           
+			break;  
+			case 7: if(!isEmpty(&l)){
+				printf("Digite o valor que deseja encontra:");
+				scanf("%d",&v);
+				printf("%d",contador(l,v));
+				break;
+			}         
 			case 0: printf("Saindo ...\n");
 			break;
 			default: printf("Opcao invalida\n");
@@ -194,4 +213,5 @@ int main(){
 		system("cls");
 	}while(op!=0);
 }//fim main
+
 
